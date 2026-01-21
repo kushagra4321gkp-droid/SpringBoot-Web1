@@ -13,7 +13,7 @@ public class HomeController {
     @RequestMapping("/")
     public String home(){
         System.out.println("Home Method Called...");
-        return "index.jsp";
+        return "index";
     }
 
     @RequestMapping("add")
@@ -30,6 +30,11 @@ public class HomeController {
 
         model.addAttribute("result", result);
 
-        return "result.jsp";
+        return "result";
     }
 }
+
+
+
+//prefix = view folder
+//postfix(suffix) = .jsp
