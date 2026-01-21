@@ -3,6 +3,7 @@ package com.Kushagra.SpringBoot_Web_App;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,7 +17,7 @@ public class HomeController {
     }
 
     @RequestMapping("add")
-    public String add(@RequestParam("num1") int num, int num2, HttpSession session){
+    public String add(@RequestParam("num1") int num, @RequestParam("num2") int num2, Model model){
 
         System.out.println("in add");
 
@@ -25,7 +26,9 @@ public class HomeController {
         int result = num + num2 + 2;
         System.out.println(result);
 
-        session.setAttribute("result", result);
+//        session.setAttribute("result", result);
+
+        model.addAttribute("result", result);
 
         return "result.jsp";
     }
