@@ -1,15 +1,18 @@
 package com.Kushagra.SpringBoot_Web_App;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
+
+    @ModelAttribute("course")
+    public String courseName(){
+        return "C#";
+    }
 
     @RequestMapping("/")
     public String home(){
@@ -36,16 +39,24 @@ public class HomeController {
     }
 
     @RequestMapping("addStudent")
-    public ModelAndView addStudent(@RequestParam("sid") int sid, @RequestParam("sname") String sname, ModelAndView mv){
+    public String addStudent(Student s){
 
-        Student s = new Student();
-        s.setSid(sid);
-        s.setSname(sname);
+        return "result";
 
-        mv.addObject("student", s);
-        mv.setViewName("result");
 
-        return mv;
+
+
+//    @RequestMapping("addStudent")
+//    public ModelAndView addStudent(@RequestParam("sid") int sid, @RequestParam("sname") String sname, ModelAndView mv){
+//
+//        Student s = new Student();
+//        s.setSid(sid);
+//        s.setSname(sname);
+//
+//        mv.addObject("student", s);
+//        mv.setViewName("result");
+//
+//        return mv;
 
 //        int num1 = Integer.parseInt(req.getParameter("num1"));
 //        int num2 = Integer.parseInt(req.getParameter("num2"));

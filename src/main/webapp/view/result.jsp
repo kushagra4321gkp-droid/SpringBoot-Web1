@@ -7,6 +7,8 @@
     <body>
         <h2>Result : ${student} </h2>
 
+        <p> Welcome to ${course} Course </p>
+
     </body>
 </html>
 
