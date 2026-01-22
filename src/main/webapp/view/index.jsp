@@ -5,12 +5,12 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h2>Kushagra CalC</h2>
-        <form action="add">
-                        <label for="num1">Enter 1st Number :</label>
-                        <input type="text" id=num1" name="num1"><br>
-                        <label for="num2">Enter 2nd Number :</label>
-                        <input type="text" id="num2" name="num2"><br>
+        <h2>Kushagra Obj</h2>
+         <form action="addStudent">
+                        <label for="sid">Enter Id :</label>
+                        <input type="text" id="sid" name="sid"><br>
+                        <label for="sname">Enter Name :</label>
+                        <input type="text" id="sname" name="sname"><br>
                         <input type="submit" value="Submit">
                     </form>
     </body>

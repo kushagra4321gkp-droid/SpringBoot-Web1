@@ -34,9 +34,32 @@ public class HomeController {
 
         return mv;
     }
+
+    @RequestMapping("addStudent")
+    public ModelAndView addStudent(@RequestParam("sid") int sid, @RequestParam("sname") String sname, ModelAndView mv){
+
+        Student s = new Student();
+        s.setSid(sid);
+        s.setSname(sname);
+
+        mv.addObject("student", s);
+        mv.setViewName("result");
+
+        return mv;
+
+//        int num1 = Integer.parseInt(req.getParameter("num1"));
+//        int num2 = Integer.parseInt(req.getParameter("num2"));
+//        int result = num + num2 + 2;
+//        System.out.println(result);
+
+//        session.setAttribute("result", result);
+//        mv.addObject("result", result);
+//        mv.setViewName("result");
+//        return mv;
+//
+    }
+
 }
-
-
 
 //prefix = view folder
 //postfix(suffix) = .jsp
